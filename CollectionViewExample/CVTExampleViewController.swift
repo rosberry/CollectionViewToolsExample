@@ -12,7 +12,7 @@ class CVTExampleViewController: UIViewController {
 
     private let menuItems: [[String]] = [["item1", "item2", "item3", "item4", "item5"],
                                          ["item6", "item7", "item8", "item9", "item10"]]
-    private let sectionHeaders: [SectionHeader] = [.init(title: "Header1"), .init(title: "Header2")]
+    private let sectionHeaders: [Category] = [.init(title: "Header1"), .init(title: "Header2")]
 
     private lazy var collectionViewManager: CollectionViewManager = .init(collectionView: collectionView)
 

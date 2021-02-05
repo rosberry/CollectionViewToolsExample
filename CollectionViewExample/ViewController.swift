@@ -15,9 +15,19 @@ class ViewController: UIViewController {
         static let profileImageCellIdentifier: String = "profileImageCellIdentifier"
     }
 
-    private let menuItems: [[String]] = [["item1", "item2", "item3", "item4", "item5"],
-                                         ["item6", "item7", "item8", "item9", "item10"]]
-    private let sectionHeaders: [String] = ["Header1", "Header2"]
+    private let menuItems: [[String]] = [["Alice in Wonderland",
+                                          "The Arabian Nights",
+                                          "The Time Machine",
+                                          "Collected Works of Poe",
+                                          "The Wonderful Wizard of Oz"],
+                                         ["The Adventures of Tom Sawyer",
+                                          "The Count of Monte Cristo",
+                                          "Around the World in 80 Days",
+                                          "Heart of Darkness",
+                                          "Abrakadabra"]]
+    private let sectionHeaders: [String] = ["Fantasy", "Adventure books"]
+
+    private let categories: [Category] = [.fantasy, .adventure]
 
     private lazy var collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
@@ -52,14 +62,14 @@ class ViewController: UIViewController {
 extension ViewController: UICollectionViewDataSource {
 
     func numberOfSections(in collectionView: UICollectionView) -> Int {
-        sectionHeaders.count + 1
+        categories.count + 1
     }
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if section == 0 {
             return 1
         }
-        return menuItems[section - 1].count + 1
+        return categories[section - 1].books.count + 1
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -73,14 +83,14 @@ extension ViewController: UICollectionViewDataSource {
         if indexPath.row == 0 {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Constants.headerCellIdentifier, for: indexPath)
             if let cell = cell as? HeaderCollectionViewCell {
-                cell.title = sectionHeaders[indexPath.section - 1]
+                cell.title = categories[indexPath.section - 1].title
             }
             return cell
         }
 
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Constants.menuItemCellIdentifier, for: indexPath)
         if let cell = cell as? MenuItemCollectionViewCell {
-            cell.title = menuItems[indexPath.section - 1][indexPath.row - 1]
+            cell.title = categories[indexPath.section - 1].books[indexPath.row - 1].title
         }
         return cell
     }

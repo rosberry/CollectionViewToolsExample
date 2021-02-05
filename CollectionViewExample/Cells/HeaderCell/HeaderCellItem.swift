@@ -18,7 +18,7 @@ final class HeaderCellItem: CollectionViewCellItem, DiffItem {
     private let title: String
     private let isHidden: Bool
 
-    init(sectionHeader: SectionHeader) {
+    init(sectionHeader: Category) {
         diffIdentifier = sectionHeader.id
         isHidden = sectionHeader.isHidden
         self.title = sectionHeader.title

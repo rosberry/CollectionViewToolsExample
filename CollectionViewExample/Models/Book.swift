@@ -1,16 +1,16 @@
 //
-//  SectionHeader.swift
+//  Book.swift
 //  CollectionViewExample
 //
-//  Created by Stas Klyukhin on 04.02.2021.
+//  Created by Stas Klyukhin on 05.02.2021.
 //
 
 import UIKit
 
-final class SectionHeader {
+final class Book {
+
     let id: String = UUID().uuidString
     let title: String
-    var isHidden: Bool = false
 
     init(title: String) {
         self.title = title
