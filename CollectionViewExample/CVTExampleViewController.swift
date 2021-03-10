@@ -10,9 +10,7 @@ import CollectionViewTools
 
 class CVTExampleViewController: UIViewController {
 
-    private let menuItems: [[String]] = [["item1", "item2", "item3", "item4", "item5"],
-                                         ["item6", "item7", "item8", "item9", "item10"]]
-    private let sectionHeaders: [Category] = [.init(title: "Header1"), .init(title: "Header2")]
+    private let categories: [Category] = [.fantasy, .adventure]
 
     private lazy var collectionViewManager: CollectionViewManager = .init(collectionView: collectionView)
 
@@ -26,6 +24,9 @@ class CVTExampleViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        let plusButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(plusButtonPressed))
+        navigationItem.rightBarButtonItem = plusButton
 
         collectionViewManager.update(makeSectionItems(), shouldReloadData: true)
 
@@ -42,24 +43,48 @@ class CVTExampleViewController: UIViewController {
     private func makeSectionItems() -> [CollectionViewDiffSectionItem] {
         let sectionItem = GeneralCollectionViewDiffSectionItem()
         var cellItems: [CollectionViewCellItem] = [ProfileImageCellItem(image: UIImage(named: "profileImage")!)]
-        for index in 0..<sectionHeaders.count {
-            let headerCellItem = HeaderCellItem(sectionHeader: sectionHeaders[index])
+        for index in 0..<categories.count {
+            let headerCellItem = HeaderCellItem(category: categories[index])
+            headerCellItem.addBookButtonHandler = { [weak self] in
+                guard let self = self else {
+                    return
+                }
+                self.categories[index].books.insert(.init(title: "New book"), at: 0)
+                self.collectionViewManager.update(with: self.makeSectionItems(), animated: true)
+            }
             headerCellItem.itemDidSelectHandler = { [weak self] _ in
                 guard let self = self else {
                     return
                 }
-                self.sectionHeaders[index].isHidden.toggle()
+                self.categories[index].isHidden.toggle()
                 self.collectionViewManager.update(with: self.makeSectionItems(), animated: true)
             }
             cellItems.append(headerCellItem)
-            let menuItemCellItems = menuItems[index].map { menuItem in
-                MenuItemCellItem(title: menuItem)
+            let bookCellItems = categories[index].books.map { book in
+                BookCellItem(title: book.title)
             }
-            if !sectionHeaders[index].isHidden {
-                cellItems.append(contentsOf: menuItemCellItems)
+            if !categories[index].isHidden {
+                cellItems.append(contentsOf: bookCellItems)
             }
         }
         sectionItem.cellItems = cellItems
         return [sectionItem]
+    }
+
+    private func addBook(to headerCellItem: HeaderCellItem) {
+        let sectionItem = collectionViewManager.sectionItems.first ?? GeneralCollectionViewSectionItem()
+        let index = sectionItem.cellItems.firstIndex { cellItem -> Bool in
+            cellItem === headerCellItem
+        }
+        let cellItem = BookCellItem(title: "New book")
+        if let index = index {
+            collectionViewManager.insert([cellItem], to: sectionItem, at: [index + 1])
+        }
+    }
+
+    @objc private func plusButtonPressed() {
+        let sectionItem = collectionViewManager.sectionItems.first ?? GeneralCollectionViewSectionItem()
+        let cellItem = BookCellItem(title: "New")
+        collectionViewManager.prepend([cellItem], to: sectionItem)
     }
 }

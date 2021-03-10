@@ -8,14 +8,15 @@
 
 /* Begin PBXBuildFile section */
 		854B6A1C25CBAD5700D42DF6 /* CVTExampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 854B6A1B25CBAD5700D42DF6 /* CVTExampleViewController.swift */; };
-		854B6A1F25CBAD6F00D42DF6 /* MenuItemCellItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 854B6A1E25CBAD6F00D42DF6 /* MenuItemCellItem.swift */; };
+		854B6A1F25CBAD6F00D42DF6 /* BookCellItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 854B6A1E25CBAD6F00D42DF6 /* BookCellItem.swift */; };
 		854B6A2225CBAD7F00D42DF6 /* HeaderCellItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 854B6A2125CBAD7F00D42DF6 /* HeaderCellItem.swift */; };
 		854B6A2525CBAD9000D42DF6 /* ProfileImageCellItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 854B6A2425CBAD9000D42DF6 /* ProfileImageCellItem.swift */; };
 		854B6A2C25CBAE4800D42DF6 /* ProfileImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 854B6A2B25CBAE4800D42DF6 /* ProfileImageCollectionViewCell.swift */; };
-		854B6A3025CBAE5C00D42DF6 /* MenuItemCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 854B6A2F25CBAE5C00D42DF6 /* MenuItemCollectionViewCell.swift */; };
+		854B6A3025CBAE5C00D42DF6 /* BookCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 854B6A2F25CBAE5C00D42DF6 /* BookCollectionViewCell.swift */; };
 		854B6A3325CBAE8300D42DF6 /* HeaderCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 854B6A3225CBAE8300D42DF6 /* HeaderCollectionViewCell.swift */; };
 		854B6A3725CBAEF300D42DF6 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 854B6A3625CBAEF300D42DF6 /* Category.swift */; };
 		854B6A3B25CCF17900D42DF6 /* Book.swift in Sources */ = {isa = PBXBuildFile; fileRef = 854B6A3A25CCF17900D42DF6 /* Book.swift */; };
+		85C9610A25F89B8800D15072 /* TouchVisualizer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 85C9610925F89B8800D15072 /* TouchVisualizer.framework */; };
 		85D0688125C3BAC7008EF32E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85D0688025C3BAC7008EF32E /* AppDelegate.swift */; };
 		85D0688325C3BAC7008EF32E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85D0688225C3BAC7008EF32E /* SceneDelegate.swift */; };
 		85D0688525C3BAC7008EF32E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85D0688425C3BAC7008EF32E /* ViewController.swift */; };
@@ -28,14 +29,15 @@
 
 /* Begin PBXFileReference section */
 		854B6A1B25CBAD5700D42DF6 /* CVTExampleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CVTExampleViewController.swift; sourceTree = "<group>"; };
-		854B6A1E25CBAD6F00D42DF6 /* MenuItemCellItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuItemCellItem.swift; sourceTree = "<group>"; };
+		854B6A1E25CBAD6F00D42DF6 /* BookCellItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookCellItem.swift; sourceTree = "<group>"; };
 		854B6A2125CBAD7F00D42DF6 /* HeaderCellItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderCellItem.swift; sourceTree = "<group>"; };
 		854B6A2425CBAD9000D42DF6 /* ProfileImageCellItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileImageCellItem.swift; sourceTree = "<group>"; };
 		854B6A2B25CBAE4800D42DF6 /* ProfileImageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileImageCollectionViewCell.swift; sourceTree = "<group>"; };
-		854B6A2F25CBAE5C00D42DF6 /* MenuItemCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuItemCollectionViewCell.swift; sourceTree = "<group>"; };
+		854B6A2F25CBAE5C00D42DF6 /* BookCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookCollectionViewCell.swift; sourceTree = "<group>"; };
 		854B6A3225CBAE8300D42DF6 /* HeaderCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderCollectionViewCell.swift; sourceTree = "<group>"; };
 		854B6A3625CBAEF300D42DF6 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		854B6A3A25CCF17900D42DF6 /* Book.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Book.swift; sourceTree = "<group>"; };
+		85C9610925F89B8800D15072 /* TouchVisualizer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = TouchVisualizer.framework; path = Carthage/Build/iOS/TouchVisualizer.framework; sourceTree = "<group>"; };
 		85D0687D25C3BAC7008EF32E /* CollectionViewExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CollectionViewExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		85D0688025C3BAC7008EF32E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		85D0688225C3BAC7008EF32E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -53,6 +55,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				85C9610A25F89B8800D15072 /* TouchVisualizer.framework in Frameworks */,
 				85D0689825C41102008EF32E /* CollectionViewTools.framework in Frameworks */,
 				85D0689A25C41102008EF32E /* DeepDiff.framework in Frameworks */,
 			);
@@ -83,8 +86,8 @@
 		854B6A2925CBAE1300D42DF6 /* MenuItemCell */ = {
 			isa = PBXGroup;
 			children = (
-				854B6A2F25CBAE5C00D42DF6 /* MenuItemCollectionViewCell.swift */,
-				854B6A1E25CBAD6F00D42DF6 /* MenuItemCellItem.swift */,
+				854B6A2F25CBAE5C00D42DF6 /* BookCollectionViewCell.swift */,
+				854B6A1E25CBAD6F00D42DF6 /* BookCellItem.swift */,
 			);
 			path = MenuItemCell;
 			sourceTree = "<group>";
@@ -144,6 +147,7 @@
 		85D0689525C41102008EF32E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				85C9610925F89B8800D15072 /* TouchVisualizer.framework */,
 				85D0689625C41102008EF32E /* CollectionViewTools.framework */,
 				85D0689725C41102008EF32E /* DeepDiff.framework */,
 			);
@@ -249,14 +253,14 @@
 				85D0688125C3BAC7008EF32E /* AppDelegate.swift in Sources */,
 				854B6A2C25CBAE4800D42DF6 /* ProfileImageCollectionViewCell.swift in Sources */,
 				854B6A1C25CBAD5700D42DF6 /* CVTExampleViewController.swift in Sources */,
-				854B6A1F25CBAD6F00D42DF6 /* MenuItemCellItem.swift in Sources */,
+				854B6A1F25CBAD6F00D42DF6 /* BookCellItem.swift in Sources */,
 				85D0688325C3BAC7008EF32E /* SceneDelegate.swift in Sources */,
 				854B6A2225CBAD7F00D42DF6 /* HeaderCellItem.swift in Sources */,
 				854B6A3325CBAE8300D42DF6 /* HeaderCollectionViewCell.swift in Sources */,
 				854B6A3B25CCF17900D42DF6 /* Book.swift in Sources */,
 				854B6A3725CBAEF300D42DF6 /* Category.swift in Sources */,
 				854B6A2525CBAD9000D42DF6 /* ProfileImageCellItem.swift in Sources */,
-				854B6A3025CBAE5C00D42DF6 /* MenuItemCollectionViewCell.swift in Sources */,
+				854B6A3025CBAE5C00D42DF6 /* BookCollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

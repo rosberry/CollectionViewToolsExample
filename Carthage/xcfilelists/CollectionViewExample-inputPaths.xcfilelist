@@ -1,2 +1,3 @@
 $(SRCROOT)/Carthage/Build/iOS/CollectionViewTools.framework
 $(SRCROOT)/Carthage/Build/iOS/DeepDiff.framework
+$(SRCROOT)/Carthage/Build/iOS/TouchVisualizer.framework

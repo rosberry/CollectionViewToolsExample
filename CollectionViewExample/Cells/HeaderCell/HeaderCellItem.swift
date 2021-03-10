@@ -15,13 +15,15 @@ final class HeaderCellItem: CollectionViewCellItem, DiffItem {
 
     let diffIdentifier: String
 
+    var addBookButtonHandler: (() -> Void)?
+
     private let title: String
     private let isHidden: Bool
 
-    init(sectionHeader: Category) {
-        diffIdentifier = sectionHeader.id
-        isHidden = sectionHeader.isHidden
-        self.title = sectionHeader.title
+    init(category: Category) {
+        diffIdentifier = category.id
+        isHidden = category.isHidden
+        title = category.title
     }
 
     func configure(_ cell: UICollectionViewCell) {
@@ -29,6 +31,7 @@ final class HeaderCellItem: CollectionViewCellItem, DiffItem {
             return
         }
         cell.title = "\(title) hidden: \(isHidden)"
+        cell.addBookButtonHandler = addBookButtonHandler
     }
 
     func size(in collectionView: UICollectionView, sectionItem: CollectionViewSectionItem) -> CGSize {
@@ -39,6 +42,7 @@ final class HeaderCellItem: CollectionViewCellItem, DiffItem {
         guard let lhs = item as? Self else {
             return false
         }
-        return lhs.title == title && lhs.isHidden == isHidden
+        return lhs.title == title &&
+            lhs.isHidden == isHidden
     }
 }

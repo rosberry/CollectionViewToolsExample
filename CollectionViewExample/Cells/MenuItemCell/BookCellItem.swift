@@ -8,9 +8,9 @@
 import UIKit
 import CollectionViewTools
 
-final class MenuItemCellItem: CollectionViewCellItem, DiffItem {
+final class BookCellItem: CollectionViewCellItem, DiffItem {
 
-    typealias Cell = MenuItemCollectionViewCell
+    typealias Cell = BookCollectionViewCell
 
     let reuseType: ReuseType = .class(Cell.self)
 

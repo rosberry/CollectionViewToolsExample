@@ -15,18 +15,6 @@ class ViewController: UIViewController {
         static let profileImageCellIdentifier: String = "profileImageCellIdentifier"
     }
 
-    private let menuItems: [[String]] = [["Alice in Wonderland",
-                                          "The Arabian Nights",
-                                          "The Time Machine",
-                                          "Collected Works of Poe",
-                                          "The Wonderful Wizard of Oz"],
-                                         ["The Adventures of Tom Sawyer",
-                                          "The Count of Monte Cristo",
-                                          "Around the World in 80 Days",
-                                          "Heart of Darkness",
-                                          "Abrakadabra"]]
-    private let sectionHeaders: [String] = ["Fantasy", "Adventure books"]
-
     private let categories: [Category] = [.fantasy, .adventure]
 
     private lazy var collectionView: UICollectionView = {
@@ -43,7 +31,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
 
         collectionView.register(HeaderCollectionViewCell.self, forCellWithReuseIdentifier: Constants.headerCellIdentifier)
-        collectionView.register(MenuItemCollectionViewCell.self, forCellWithReuseIdentifier: Constants.menuItemCellIdentifier)
+        collectionView.register(BookCollectionViewCell.self, forCellWithReuseIdentifier: Constants.menuItemCellIdentifier)
         collectionView.register(ProfileImageCollectionViewCell.self, forCellWithReuseIdentifier: Constants.profileImageCellIdentifier)
 
         view.addSubview(collectionView)
@@ -89,7 +77,7 @@ extension ViewController: UICollectionViewDataSource {
         }
 
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Constants.menuItemCellIdentifier, for: indexPath)
-        if let cell = cell as? MenuItemCollectionViewCell {
+        if let cell = cell as? BookCollectionViewCell {
             cell.title = categories[indexPath.section - 1].books[indexPath.row - 1].title
         }
         return cell

@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class MenuItemCollectionViewCell: UICollectionViewCell {
+final class BookCollectionViewCell: UICollectionViewCell {
     var title: String? {
         didSet {
             titleLabel.text = title

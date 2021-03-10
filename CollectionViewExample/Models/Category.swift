@@ -11,7 +11,7 @@ final class Category {
 
     let id: String = UUID().uuidString
     let title: String
-    let books: [Book]
+    var books: [Book]
     var isHidden: Bool = false
 
     init(title: String, books: [Book] = []) {
